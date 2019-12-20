@@ -1,0 +1,14 @@
+{
+	"name": "activity-tracker",
+	"version": "1.0.0",
+	"description": "A nodejs activity tracking application",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Ambar Mutha",
+	"license": "MIT",
+	"dependencies": {
+		"node-window-manager": "^2.0.1"
+	}
+}
