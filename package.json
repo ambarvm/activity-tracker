@@ -4,6 +4,7 @@
 	"description": "A nodejs activity tracking application",
 	"main": "src/main.ts",
 	"scripts": {
+		"start": "tsc --watch",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "Ambar Mutha",
@@ -13,6 +14,7 @@
 		"lowdb": "^1.0.0"
 	},
 	"devDependencies": {
+		"@types/lowdb": "^1.0.9",
 		"@types/node": "^12.12.21",
 		"electron": "^7.1.7",
 		"tslint": "^5.20.1",
