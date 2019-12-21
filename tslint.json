@@ -1,0 +1,11 @@
+{
+	"extends": "tslint:recommended",
+	"rules": {
+		"quotemark": [true, "single", "avoid-escape"],
+		"deprecation": { "severity": "warning" },
+		"indent": { "options": "tabs" },
+		"no-console": [true, "debug", "info", "time", "timeEnd", "trace"],
+		"triple-equals": false,
+		"arrow-parens": false
+	}
+}
