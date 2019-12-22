@@ -11,12 +11,13 @@
 	"license": "MIT",
 	"dependencies": {
 		"active-win": "^6.0.0",
+		"carlo": "^0.9.46",
 		"lowdb": "^1.0.0"
 	},
 	"devDependencies": {
+		"@types/carlo": "^0.9.1",
 		"@types/lowdb": "^1.0.9",
 		"@types/node": "^12.12.21",
-		"electron": "^7.1.7",
 		"tslint": "^5.20.1",
 		"typescript": "^3.7.3"
 	}

@@ -1,5 +1,7 @@
+import * as carlo from 'carlo';
 import * as low from 'lowdb';
 import * as FileSync from 'lowdb/adapters/FileSync';
+import * as path from 'path';
 import { WindowObserver } from './WindowObserver';
 
 const adapter = new FileSync('database/usage.json');
@@ -26,3 +28,17 @@ windowObserver.on('change', (title: string) => {
 	lastTitle = title;
 	lastTime = currentTime;
 });
+
+(async () => {
+	// Launch the browser.
+	const app = await carlo.launch();
+
+	// Terminate Node.js process on app window closing.
+	app.on('exit', () => process.exit());
+
+	// Tell carlo where your web files are located.
+	app.serveFolder(path.resolve(__dirname, '../src/pages'));
+
+	// Navigate to the main page of your app.
+	await app.load('index.html');
+})();
