@@ -9,8 +9,8 @@ body {
 
 @media screen and (prefers-color-scheme: light), screen and (prefers-color-scheme: no-preference) {
 	body {
-		color: #212121;
-		background-color: white;
+		color: #202124;
+		background-color: #dee1e6;
 	}
 }
 

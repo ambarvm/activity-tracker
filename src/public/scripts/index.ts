@@ -44,7 +44,7 @@ am4core.ready(async () => {
 	pieSeries.slices.template.cornerRadius = 8;
 	pieSeries.labels.template.padding(0, 0, 0, 0);
 
-	pieSeries.ticks.template.disabled = true;
+	// pieSeries.ticks.template.disabled = false;
 
 	// Create a base filter effect (as if it's not there) for the hover to return to
 	const shadow = pieSeries.slices.template.filters.push(new am4core.DropShadowFilter());
