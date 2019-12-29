@@ -6,6 +6,7 @@
 		"indent": { "options": "tabs" },
 		"no-console": [true, "debug", "info", "time", "timeEnd", "trace"],
 		"triple-equals": false,
-		"arrow-parens": false
+		"arrow-parens": false,
+		"interface-name": false
 	}
 }
