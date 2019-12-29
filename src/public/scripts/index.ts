@@ -7,9 +7,13 @@ import '../styles/common.css';
 
 declare function getUsage(date: string): ChartData[];
 
+const darkMode = window.matchMedia('(prefers-color-scheme:dark)').matches;
+
 am4core.ready(async () => {
 	// Themes begin
-	am4core.useTheme(am4themes_dark);
+	if (darkMode) {
+		am4core.useTheme(am4themes_dark);
+	}
 	am4core.useTheme(am4themes_animated);
 	// Themes end
 
@@ -33,12 +37,12 @@ am4core.ready(async () => {
 		},
 	];
 
-	pieSeries.alignLabels = false;
+	pieSeries.alignLabels = true;
 	// pieSeries.labels.template.bent = true;
 	// pieSeries.labels.template.content
 	pieSeries.labels.template.radius = 3;
 	pieSeries.slices.template.cornerRadius = 8;
-	pieSeries.labels.template.padding(50, 50, 50, 50);
+	pieSeries.labels.template.padding(0, 0, 0, 0);
 
 	pieSeries.ticks.template.disabled = true;
 

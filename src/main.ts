@@ -35,7 +35,7 @@ const getUsage = (date: string): ChartData[] => {
 	const result = [];
 
 	for (const appName in data) {
-		if (data.hasOwnProperty(appName)) {
+		if (data.hasOwnProperty(appName) && data[appName]) {
 			result.push({
 				name: appName,
 				seconds: data[appName],
