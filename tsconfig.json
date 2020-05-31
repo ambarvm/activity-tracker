@@ -1,7 +1,0 @@
-{
-	"compileOnSave": true,
-	"compilerOptions": {
-		"outDir": "dist"
-	},
-	"include": ["src/**/*"]
-}

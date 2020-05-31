@@ -1,4 +1,6 @@
+.DS_Store
+data/
 node_modules/
-dist/
-.vscode/
-database/
+src/node_modules/
+yarn-error.log
+__sapper__/
