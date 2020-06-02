@@ -4,7 +4,7 @@
 	"description": "",
 	"main": "src/index.js",
 	"scripts": {
-		"dev": "sapper dev --no-hot",
+		"dev": "sapper dev -o --no-hot",
 		"build": "sapper build",
 		"export": "sapper export",
 		"start": "node __sapper__/build"
@@ -14,12 +14,13 @@
 	"license": "MIT",
 	"dependencies": {
 		"active-win": "^6.1.0",
-		"lowdb": "^1.0.0",
 		"compression": "^1.7.1",
+		"lowdb": "^1.0.0",
 		"polka": "next",
 		"sirv": "^0.4.0"
 	},
 	"devDependencies": {
+		"humanize-duration": "^3.23.0",
 		"npm-run-all": "^4.1.5",
 		"sapper": "^0.27.0",
 		"svelte": "^3.0.0",

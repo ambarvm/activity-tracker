@@ -1,15 +1,10 @@
+import * as db from './db';
 const activeWin = require('active-win');
-const low = require('lowdb');
-const FileSync = require('lowdb/adapters/FileSync');
 
-// init lowdb
-const adapter = new FileSync('data/usage.json');
-const db = low(adapter);
+let today = new Date().toDateString().slice(4);
 
-let today = new Date().toDateString();
-
-let usage = db.get(today).value() || {};
-db.set(today, usage).write();
+let usage = db.get(today) || {};
+db.set(today, usage);
 
 async function updateUsage() {
 	const window = await activeWin();
@@ -22,10 +17,15 @@ async function updateUsage() {
 		} else {
 			usage[name] = 1;
 		}
-		db.set(today, usage).write();
+		db.set(today, usage);
 	}
 }
 
-setInterval(updateUsage, 1000);
+/**
+ * Start tracking usage data
+ */
+function trackUsage() {
+	setInterval(updateUsage, 1000);
+}
 
-export default usage;
+export default trackUsage;
