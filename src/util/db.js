@@ -18,5 +18,5 @@ export function get(path) {
  * @param value
  */
 export function set(path, value) {
-	db.set(path, value);
+	db.set(path, value).write();
 }
