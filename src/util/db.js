@@ -1,15 +1,15 @@
 const low = require('lowdb');
 const FileSync = require('lowdb/adapters/FileSync');
 
-const adapter = new FileSync('data/usage.json');
-const db = low(adapter);
+const usageDB = low(new FileSync('data/usage.json'));
+const appNameDB = low(new FileSync('data/appName.json'));
 
 /**
  *
  * @param {string} path
  */
-export function get(path) {
-	return db.get(path).value();
+export function getUsage(path) {
+	return usageDB.get(path).value();
 }
 
 /**
@@ -17,6 +17,24 @@ export function get(path) {
  * @param {string} path
  * @param value
  */
-export function set(path, value) {
-	db.set(path, value).write();
+export function setUsage(path, value) {
+	usageDB.set(path, value).write();
+}
+
+/**
+ *
+ * @param {string|string[]} path
+ * @returns {string}
+ */
+export function getAppName(path) {
+	return appNameDB.get(path).value();
+}
+
+/**
+ *
+ * @param {string|string[]} path
+ * @param value
+ */
+export function setAppName(path, value) {
+	appNameDB.set(path, value).write();
 }

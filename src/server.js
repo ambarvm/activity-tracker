@@ -3,7 +3,7 @@ import polka from 'polka';
 import compression from 'compression';
 import * as sapper from '@sapper/server';
 
-import trackUsage from './util/trackUsage';
+import { trackUsage } from './util/trackUsage';
 
 trackUsage();
 
@@ -16,6 +16,6 @@ polka() // You can also use Express
 		sirv('static', { dev }),
 		sapper.middleware(),
 	)
-	.listen(PORT, (err) => {
+	.listen(PORT, err => {
 		if (err) console.log('error', err);
 	});
