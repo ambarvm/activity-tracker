@@ -4,7 +4,11 @@
 	import { toYYYYMMDD } from '../util/dates';
 
 	let usage = {};
+	$: totalTime = Object.values(usage).reduce((a, c) => a + c, 0);
+
 	let date = toYYYYMMDD(new Date());
+
+	let humanize = x => humanizeDuration(x * 1000, { largest: 2 });
 
 	onMount(() => {
 		const getUsage = async () => {
@@ -23,9 +27,11 @@
 <input type="date" bind:value={date} />
 
 {#if usage}
+	<h2>{humanize(totalTime)}</h2>
+
 	<ul>
 		{#each Object.entries(usage) as [name, seconds]}
-			<li>{name}: {humanizeDuration(seconds * 1000, { largest: 2 })}</li>
+			<li>{name}: {humanize(seconds)}</li>
 		{/each}
 	</ul>
 {:else}
